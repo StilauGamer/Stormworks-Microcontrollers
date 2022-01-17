@@ -14,7 +14,7 @@ __simulator:beginSimulation(false, arg[1], arg[2])
 -- compatibility with 0.0.7 projects
 LBSimulatorInputHelpers = LifeBoatAPI.Tools.SimulatorInputHelpers
 
-require("test");
+require("loadingScreen");
 
 -- compatibility with 0.0.4 projects
 if onLBSimulatorInit then
