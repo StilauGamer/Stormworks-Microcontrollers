@@ -1,5 +1,13 @@
-17.01.2022 12:29:19 Launching, time stamp.
-17.01.2022 12:29:19 Opening connection on port 14238
-17.01.2022 12:29:19 Now Accepting TCP clients
-17.01.2022 12:29:19 MainWindow Initialized and running
-17.01.2022 12:29:19 Client accepted - Client Connected: True, beginning Message Loop
+18.01.2022 11:33:29 Launching, time stamp.
+18.01.2022 11:33:29 Opening connection on port 14238
+18.01.2022 11:33:29 Now Accepting TCP clients
+18.01.2022 11:33:29 MainWindow Initialized and running
+18.01.2022 11:33:29 Client accepted - Client Connected: True, beginning Message Loop
+
+18.01.2022 11:33:48 SocketReadTask - Exception - Closing Pipe - Client Connected: True - System.NullReferenceException: Objektreferanse er ikke satt til en objektforekomst.
+   ved STORMWORKS_Simulator.TickHandler.OnLineRead(Object sender, String messageFromVS)
+   ved STORMWORKS_Simulator.SocketConnection.<.ctor>b__13_0()
+
+
+18.01.2022 11:33:48 Pipe_OnPipeClosed - Closing Application
+

@@ -7,7 +7,7 @@
 
 require("_build._simulator_config") -- LifeBoatAPI allows you to use lua's "require" keyword. see the /build/_simulator_config.lua file for how to configure the simulator
 require("LifeBoatAPI") -- Type 'LifeBoatAPI.' and use intellisense to checkout the new LifeBoatAPI library functions; such as the LBVec vector maths library
-require("ResizableText") -- For the resizable API
+require("RezisableScript") -- For the resizable API
 
 startButton = LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(1, 1, 29, 8)
 lightButton = LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(1, 11, 29, 8)

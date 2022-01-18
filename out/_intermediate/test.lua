@@ -1,3 +1,4 @@
+require("LifeBoatAPI")
 ---@section toggleButtonUI
 function toggleButtonUI(btn, text, textColor, outlineColor, fillColor, defaultColor)
     if btn:lbbutton_isClicked() then                                            -- Activates when the button is clicked.
@@ -42,3 +43,6 @@ function toggleButtonUI(btn, text, textColor, outlineColor, fillColor, defaultCo
       return tonumber("0x"..hex:sub(1,2)), tonumber("0x"..hex:sub(3,4)), tonumber("0x"..hex:sub(5,6))  -- Returns the hex in 3 different values as R, G and B
   end
 ---@endsection
+
+toggleButtonClick()
+toggleButtonUI()
