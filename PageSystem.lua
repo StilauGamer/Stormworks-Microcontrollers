@@ -11,8 +11,17 @@ buttons = {
 function onTick()
   LifeBoatAPI.LBTouchScreen:lbtouchscreen_onTick()
 
-  toggleButtonClick(buttons[1], 1)
-  toggleButtonClick(buttons[2], 2)
+  if toggleButtonClick(buttons[1], 1) then
+    page1 = true
+    page2 = false
+  else
+    page1 = false
+    page2 = true
+  end
+
+  if page2 then
+    output.setBool(1)
+  end
 end
 
 function onDraw()
@@ -21,4 +30,8 @@ function onDraw()
 
   h = screen.getHeight()
   w = screen.getWidth()
+
+  if page1 then
+    screen.drawTextBox(0, 0, w, h, "Test 1", 0, 0)
+  end
 end

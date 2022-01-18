@@ -1,5 +1,5 @@
 -- Author: StilauGamer
--- GitHub: https://github.com/profiles/stilaugamer
+-- GitHub: https://github.com/StilauGamer
 -- Workshop: <WorkshopLink>
 --
 --- Developed using LifeBoatAPI - Stormworks Lua plugin for VSCode - https://code.visualstudio.com/download (search "Stormworks Lua with LifeboatAPI" extension)
@@ -14,7 +14,7 @@ __simulator:beginSimulation(false, arg[1], arg[2])
 -- compatibility with 0.0.7 projects
 LBSimulatorInputHelpers = LifeBoatAPI.Tools.SimulatorInputHelpers
 
-require("ButtonsPanel");
+require("ScreenFeatures");
 
 -- compatibility with 0.0.4 projects
 if onLBSimulatorInit then

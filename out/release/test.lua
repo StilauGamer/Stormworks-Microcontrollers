@@ -1,11 +1,11 @@
 -- Author: StilauGamer
--- GitHub: https://github.com/profiles/stilaugamer
+-- GitHub: https://github.com/StilauGamer
 -- Workshop: <WorkshopLink>
 --
 -- Developed & Minimized using LifeBoatAPI - Stormworks Lua plugin for VSCode
 -- https://code.visualstudio.com/download (search "Stormworks Lua with LifeboatAPI" extension)
 --      By Nameous Changey
--- Minimized Size: 580 (921) chars
+-- Minimized Size: 613 (945) chars
 C="0x"
 B=tonumber
 A=screen
@@ -23,13 +23,16 @@ end
 function q(d,r,type,s)if type=="hold" then
 if d:t()then
 d.k=true
-z(r,d.k)else
+z(r,d.k)return d.k
+else
 d.k=false
-z(r,d.k)end
+z(r,d.k)return d.k
+end
 else
 if d:j()then
 d.u=not d.u
-z(r,d.u)end
+z(r,d.u)return d.u
+end
 end
 end
 function l(v)v=v:gsub("#","")return B(C..v:sub(1,2)),B(C..v:sub(3,4)),B(C..v:sub(5,6))end

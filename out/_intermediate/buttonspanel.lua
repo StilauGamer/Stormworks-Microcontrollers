@@ -20,16 +20,24 @@
 ---@param simulator Simulator
 ---@param config SimulatorConfig
 ---@param helpers SimulatorInputHelpers
-__simulator.config:configureScreen(1, "3x2", true, false)
-__simulator.config:setProperty("ExampleProperty", 50)
+__simulator.config:configureScreen(1, "3x3", true, false)
 
--- handlers that automatically update the inputs each frame
--- useful for simple inputs (sweeps/wraps etc.)
-__simulator.config:addBoolHandler(10,   function() return math.random() * 100 < 20 end)
-__simulator.config:addNumberHandler(10, function() return math.random() * 100 end)
+-- Properties
+__simulator.config:setProperty("Text Color (Hex)", "0000FF")
+__simulator.config:setProperty("Outline Color (Hex)", "FFFFFF")
+__simulator.config:setProperty("Background Color (Hex)", "FFFFFF")
+__simulator.config:setProperty("Default Button Color (Hex)", "FFFFFF")
 
--- there's also a helpers library with a number of handling functions for you to try!
-__simulator.config:addNumberHandler(10, LBSimulatorInputHelpers.constantNumber(5001))
+
+-- Increasing Number
+_ticks = 0
+
+---@param simulator Simulator
+function onLBSimulatorTick(simulator)
+   _ticks = _ticks + 1
+   simulator:setInputNumber(5,  _ticks // 30)
+end
+
 
 
 --- runs every tick, prior to onTick and onDraw
@@ -1145,19 +1153,22 @@ function toggleButtonUI(btn, text, textColor, outlineColor, fillColor, defaultCo
   end
 ---@endsection
 ---@section toggleButtonClick
-  function toggleButtonClick(btn, compOutput, type)
+  function toggleButtonClick(btn, compOutput, type, page)
     if type == "hold" then                       -- Checks if the button is on the mode "hold"
       if btn:lbbutton_isHeld() then              -- Activates when the button is held.
         btn.toggled = true                       -- Sets the btn.toggled to true so it activates the UI
         output.setBool(compOutput, btn.toggled)  -- Sets the comp output to the btn.toggled value
+        return btn.toggled
       else
         btn.toggled = false                      -- Sets the btn.toggled to false so it deactivates the UI
         output.setBool(compOutput, btn.toggled)  -- Sets the comp output to the btn.toggled value
+        return btn.toggled
       end
     else
       if btn:lbbutton_isClicked() then           -- Activates when the button is clicked.
         btn.clicked = not btn.clicked            -- Sets the btn.clicked to the opposite of the value it had.
         output.setBool(compOutput, btn.clicked)  -- Sets the comp output to the btn.clicked value.
+        return btn.clicked
       end
     end
   end

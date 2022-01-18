@@ -35,7 +35,6 @@ _ticks = 0
 ---@param simulator Simulator
 function onLBSimulatorTick(simulator)
    _ticks = _ticks + 1
-    -- simulator:setInput( inputIndex, value )
    simulator:setInputNumber(5,  _ticks // 30)
 end
 
@@ -1159,14 +1158,17 @@ function toggleButtonUI(btn, text, textColor, outlineColor, fillColor, defaultCo
       if btn:lbbutton_isHeld() then              -- Activates when the button is held.
         btn.toggled = true                       -- Sets the btn.toggled to true so it activates the UI
         output.setBool(compOutput, btn.toggled)  -- Sets the comp output to the btn.toggled value
+        return btn.toggled
       else
         btn.toggled = false                      -- Sets the btn.toggled to false so it deactivates the UI
         output.setBool(compOutput, btn.toggled)  -- Sets the comp output to the btn.toggled value
+        return btn.toggled
       end
     else
       if btn:lbbutton_isClicked() then           -- Activates when the button is clicked.
         btn.clicked = not btn.clicked            -- Sets the btn.clicked to the opposite of the value it had.
         output.setBool(compOutput, btn.clicked)  -- Sets the comp output to the btn.clicked value.
+        return btn.clicked
       end
     end
   end
@@ -1187,8 +1189,17 @@ buttons = {
 function onTick()
   LifeBoatAPI.LBTouchScreen:lbtouchscreen_onTick()
 
-  toggleButtonClick(buttons[1], 1)
-  toggleButtonClick(buttons[2], 2)
+  if toggleButtonClick(buttons[1], 1) then
+    page1 = true
+    page2 = false
+  else
+    page1 = false
+    page2 = true
+  end
+
+  if page2 then
+    output.setBool(1)
+  end
 end
 
 function onDraw()
@@ -1197,4 +1208,8 @@ function onDraw()
 
   h = screen.getHeight()
   w = screen.getWidth()
+
+  if page1 then
+    screen.drawTextBox(0, 0, w, h, "Test 1", 0, 0)
+  end
 end

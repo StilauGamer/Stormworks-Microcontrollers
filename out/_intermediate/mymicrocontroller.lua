@@ -40,7 +40,6 @@ _ticks = 0
 ---@param simulator Simulator
 function onLBSimulatorTick(simulator)
    _ticks = _ticks + 1
-    -- simulator:setInput( inputIndex, value )
    simulator:setInputNumber(5,  _ticks // 30)
 end
 

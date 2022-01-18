@@ -27,12 +27,12 @@ for i=15, #arg do
 end
 
 local _builder = LifeBoatAPI.Tools.Builder:new(rootDirs, outputDir, luaDocsMCPath, luaDocsAddonPath)
-_builder:buildMicrocontroller([[test.lua]], LifeBoatAPI.Tools.Filepath:new([[c:\Users\StianAlmelienLauvdal\Documents\Coding sheit\Stormworks-Microcontrollers\test.lua]]), params)
-_builder:buildMicrocontroller([[ScreenFeatures.lua]], LifeBoatAPI.Tools.Filepath:new([[c:\Users\StianAlmelienLauvdal\Documents\Coding sheit\Stormworks-Microcontrollers\ScreenFeatures.lua]]), params)
-_builder:buildMicrocontroller([[PageSystem.lua]], LifeBoatAPI.Tools.Filepath:new([[c:\Users\StianAlmelienLauvdal\Documents\Coding sheit\Stormworks-Microcontrollers\PageSystem.lua]]), params)
-_builder:buildMicrocontroller([[MyMicrocontroller.lua]], LifeBoatAPI.Tools.Filepath:new([[c:\Users\StianAlmelienLauvdal\Documents\Coding sheit\Stormworks-Microcontrollers\MyMicrocontroller.lua]]), params)
-_builder:buildMicrocontroller([[libraries\RezisableScript.lua]], LifeBoatAPI.Tools.Filepath:new([[c:\Users\StianAlmelienLauvdal\Documents\Coding sheit\Stormworks-Microcontrollers\libraries\RezisableScript.lua]]), params)
-_builder:buildMicrocontroller([[libraries\ButtonFeatures.lua]], LifeBoatAPI.Tools.Filepath:new([[c:\Users\StianAlmelienLauvdal\Documents\Coding sheit\Stormworks-Microcontrollers\libraries\ButtonFeatures.lua]]), params)
-_builder:buildMicrocontroller([[ButtonsPanel.lua]], LifeBoatAPI.Tools.Filepath:new([[c:\Users\StianAlmelienLauvdal\Documents\Coding sheit\Stormworks-Microcontrollers\ButtonsPanel.lua]]), params)
+_builder:buildMicrocontroller([[ScreenFeatures.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\Lua Sheit\Stormworks-Microcontrollers\ScreenFeatures.lua]]), params)
+_builder:buildMicrocontroller([[test.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\Lua Sheit\Stormworks-Microcontrollers\test.lua]]), params)
+_builder:buildMicrocontroller([[PageSystem.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\Lua Sheit\Stormworks-Microcontrollers\PageSystem.lua]]), params)
+_builder:buildMicrocontroller([[MyMicrocontroller.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\Lua Sheit\Stormworks-Microcontrollers\MyMicrocontroller.lua]]), params)
+_builder:buildMicrocontroller([[ButtonsPanel.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\Lua Sheit\Stormworks-Microcontrollers\ButtonsPanel.lua]]), params)
+_builder:buildMicrocontroller([[libraries\RezisableScript.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\Lua Sheit\Stormworks-Microcontrollers\libraries\RezisableScript.lua]]), params)
+_builder:buildMicrocontroller([[libraries\ButtonFeatures.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\Lua Sheit\Stormworks-Microcontrollers\libraries\ButtonFeatures.lua]]), params)
 require([[_build._post_buildactions]])
 --- @diagnostic enable: undefined-global

@@ -25,14 +25,17 @@ function toggleButtonUI(btn, text, textColor, outlineColor, fillColor, defaultCo
       if btn:lbbutton_isHeld() then              -- Activates when the button is held.
         btn.toggled = true                       -- Sets the btn.toggled to true so it activates the UI
         output.setBool(compOutput, btn.toggled)  -- Sets the comp output to the btn.toggled value
+        return btn.toggled
       else
         btn.toggled = false                      -- Sets the btn.toggled to false so it deactivates the UI
         output.setBool(compOutput, btn.toggled)  -- Sets the comp output to the btn.toggled value
+        return btn.toggled
       end
     else
       if btn:lbbutton_isClicked() then           -- Activates when the button is clicked.
         btn.clicked = not btn.clicked            -- Sets the btn.clicked to the opposite of the value it had.
         output.setBool(compOutput, btn.clicked)  -- Sets the comp output to the btn.clicked value.
+        return btn.clicked
       end
     end
   end
