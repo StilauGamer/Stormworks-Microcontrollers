@@ -20,7 +20,7 @@ function toggleButtonUI(btn, text, textColor, outlineColor, fillColor, defaultCo
   end
 ---@endsection
 ---@section toggleButtonClick
-  function toggleButtonClick(btn, compOutput, type, page)
+  function toggleButtonClick(btn, compOutput, type)
     if type == "hold" then                       -- Checks if the button is on the mode "hold"
       if btn:lbbutton_isHeld() then              -- Activates when the button is held.
         btn.toggled = true                       -- Sets the btn.toggled to true so it activates the UI
@@ -30,6 +30,14 @@ function toggleButtonUI(btn, text, textColor, outlineColor, fillColor, defaultCo
         btn.toggled = false                      -- Sets the btn.toggled to false so it deactivates the UI
         output.setBool(compOutput, btn.toggled)  -- Sets the comp output to the btn.toggled value
         return btn.toggled
+      end
+    elseif type == "click" then
+      if btn:lbbutton_isClicked() then
+        output.setBool(compOutput, true)
+        return true
+      else
+        output.setBool(compOutput, false)
+        return false
       end
     else
       if btn:lbbutton_isClicked() then           -- Activates when the button is clicked.

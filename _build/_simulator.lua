@@ -14,7 +14,7 @@ __simulator:beginSimulation(false, arg[1], arg[2])
 -- compatibility with 0.0.7 projects
 LBSimulatorInputHelpers = LifeBoatAPI.Tools.SimulatorInputHelpers
 
-require("ScreenFeatures");
+require("out.release.maponscreen");
 
 -- compatibility with 0.0.4 projects
 if onLBSimulatorInit then
