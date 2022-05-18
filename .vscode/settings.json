@@ -7,49 +7,53 @@
     ],
     "Lua.runtime.version": "Lua 5.3",
     "Lua.runtime.builtin": {
-        "coroutine": "disable",
-        "bit32": "disable",
-        "bit": "disable",
-        "builtin": "disable",
-        "utf8": "disable",
-        "package": "disable",
-        "os": "disable",
-        "jit": "disable",
-        "io": "disable",
-        "ffi": "disable",
-        "debug": "disable",
-        "basic": "disable"
+        "coroutine": "enable",
+        "bit32": "enable",
+        "bit": "enable",
+        "builtin": "enable",
+        "utf8": "enable",
+        "package": "enable",
+        "os": "enable",
+        "jit": "enable",
+        "io": "enable",
+        "ffi": "enable",
+        "debug": "enable",
+        "basic": "enable"
     },
     "Lua.workspace.ignoreDir": [
         ".vscode",
         "/out/",
-        "/_build/"
+        "/_build/",
+        "/_examples_and_tutorials/"
     ],
     "lua.debug.settings.cpath": [
         "c:/Users/StianAlmelienLauvdal/.vscode/extensions/nameouschangey.lifeboatapi-0.0.10//assets/luasocket/dll/socket/core.dll",
         "c:/Users/StianAlmelienLauvdal/.vscode/extensions/nameouschangey.lifeboatapi-0.0.10//assets/luasocket/dll/mime/core.dll",
         "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.10//assets/luasocket/dll/socket/core.dll",
-        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.10//assets/luasocket/dll/mime/core.dll"
+        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.10//assets/luasocket/dll/mime/core.dll",
+        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/luasocket/dll/socket/core.dll",
+        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/luasocket/dll/mime/core.dll"
     ],
     "lua.debug.settings.path": [
-        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.10//assets/luasocket/?.lua",
-        "E:/Coding Sheit/Lua Sheit/Stormworks-Microcontrollers/libraries/?.lua",
-        "E:/Coding Sheit/Lua Sheit/Stormworks-Microcontrollers/libraries/?.lbinternal",
-        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.10//assets/LifeBoatAPI/Microcontroller/?.lua",
-        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.10//assets/LifeBoatAPI/Microcontroller/?.lbinternal",
-        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.10//assets/LifeBoatAPI/Tools/?.lua",
-        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.10//assets/LifeBoatAPI/Tools/?.lbinternal"
+        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/luasocket/?.lua",
+        "E:/Coding Sheit/SW controllers/Stormworks-Microcontrollers/libraries/?.lua",
+        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/LifeBoatAPI/Microcontroller/?.lua",
+        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/LifeBoatAPI/Tools/?.lua"
     ],
     "Lua.workspace.library": [
-        "E:/Coding Sheit/Lua Sheit/Stormworks-Microcontrollers/libraries/",
-        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.10//assets/LifeBoatAPI/Microcontroller/",
-        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.10//assets/LifeBoatAPI/Tools/",
-        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.10//assets/nelodocs/docs_vehicles.lua"
+        "E:/Coding Sheit/SW controllers/Stormworks-Microcontrollers/libraries/",
+        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/LifeBoatAPI/Microcontroller/",
+        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/LifeBoatAPI/Tools/"
     ],
     "lua.debug.settings.luaVersion": "5.3",
     "lua.debug.settings.luaArch": "x86",
     "Lua.IntelliSense.traceBeSetted": true,
     "Lua.IntelliSense.traceFieldInject": true,
     "Lua.IntelliSense.traceLocalSet": true,
-    "Lua.IntelliSense.traceReturn": true
+    "Lua.IntelliSense.traceReturn": true,
+    "Lua.diagnostics.globals": [
+        "__simulator",
+        "print",
+        "simulator"
+    ]
 }
