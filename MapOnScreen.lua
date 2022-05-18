@@ -3,15 +3,34 @@ require("_build._simulator_config")
 require("LifeBoatAPI")
 require("ButtonFeatures")
 
-buttons = {
-    LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(1, 1, 6, 6),
-    LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(1, 7, 6, 6),
-    LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(56, 56, 6, 6),
-    LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(48, 56, 6, 6),
-    LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(40, 56, 6, 6),
-    LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(48, 48, 6, 6),
-    LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(1, 13, 6, 6)
-}
+-- Buttons
+buttons = {}
+if _w2 == 2 and _h2 == 2 then
+  buttons = {
+    LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(54, 54, 8, 8),
+    LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(45, 54, 8, 8),
+    LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(36, 54, 8, 8),
+    LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(45, 45, 8, 8)
+  }
+elseif _w2 == 3 and _h2 == 2 then
+  buttons = {
+    LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(86, 54, 8, 8),
+    LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(77, 54, 8, 8),
+    LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(68, 54, 8, 8),
+    LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(77, 45, 8, 8)
+  }
+else
+  buttons = {
+    LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(86, 54, 8, 8),
+    LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(77, 54, 8, 8),
+    LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(68, 54, 8, 8),
+    LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(77, 45, 8, 8)
+  }
+end
+-- Standard Buttons
+buttons[5] = LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(1, 1, 6, 6)
+buttons[6] = LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(1, 8, 6, 6)
+buttons[7] = LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(1, 15, 6, 6)
 
 -- Variables
 zoom = 1
@@ -20,6 +39,7 @@ panRate = 7.5
 mapX = 0
 mapY = 0
 ticks = 0
+mapUseGps = false
 
 function onTick()
   LifeBoatAPI.LBTouchScreen:lbtouchscreen_onTick()
@@ -72,23 +92,21 @@ function onDraw()
   -- Variables
   w = screen.getWidth()
   h = screen.getHeight()
+  _w2 = w / 32
+  _h2 = h / 32
   
   screen.drawMap(mapX, mapY, zoom)
   screen.setColor(255, 0, 0)
-
-  if w/32 == 2 and h/32 == 2 then
-    screen.drawRect(31, 31, 2, 2)
-  elseif w/32 == 3 and h/32 == 3 then
-    screen.drawRect(47, 47, 3, 3)
-  end
+  boatX, boatY = map.mapToScreen(mapX, mapY, zoom, w, h, gpsX, gpsY)
+  screen.drawCircleF(boatX, boatY, 1)
 
   -- Buttons
-  toggleButtonUI(buttons[1], "+", "000000", "FFFFFF",  "FFFFFF", "FFFFFF")
-  toggleButtonUI(buttons[2], "-", "000000", "FFFFFF",  "FFFFFF", "FFFFFF")
-  toggleButtonUI(buttons[3], ">", "000000", "FFFFFF",  "FFFFFF", "FFFFFF")
-  toggleButtonUI(buttons[4], "_", "000000", "FFFFFF",  "FFFFFF", "FFFFFF")
-  toggleButtonUI(buttons[5], "<", "000000", "FFFFFF",  "FFFFFF", "FFFFFF")
-  toggleButtonUI(buttons[6], "^", "000000", "FFFFFF",  "FFFFFF", "FFFFFF")
-  toggleButtonUI(buttons[7], "!", "000000", "FFFFFF",  "FFFFFF", "FFFFFF")
+  toggleButtonUI(buttons[1], "+", "000000", "636363",  "636363", "000000")
+  toggleButtonUI(buttons[2], "-", "000000", "636363",  "636363", "000000")
+  toggleButtonUI(buttons[3], ">", "000000", "636363",  "636363", "000000")
+  toggleButtonUI(buttons[4], "_", "000000", "636363",  "636363", "000000")
+  toggleButtonUI(buttons[5], "<", "000000", "636363",  "636363", "000000")
+  toggleButtonUI(buttons[6], "^", "000000", "636363",  "636363", "000000")
+  toggleButtonUI(buttons[7], "!", "000000", "636363",  "636363", "000000")
 
 end

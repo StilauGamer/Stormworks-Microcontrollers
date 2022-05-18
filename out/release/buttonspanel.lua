@@ -1,11 +1,11 @@
 -- Author: StilauGamer
--- GitHub: https://github.com/StilauGamer
+-- GitHub: <GithubLink>
 -- Workshop: <WorkshopLink>
 --
 -- Developed & Minimized using LifeBoatAPI - Stormworks Lua plugin for VSCode
 -- https://code.visualstudio.com/download (search "Stormworks Lua with LifeboatAPI" extension)
 --      By Nameous Changey
--- Minimized Size: 1675 (2009) chars
+-- Minimized Size: 1684 (2000) chars
 bi="0x"
 bh=tonumber
 bg=true
@@ -24,36 +24,36 @@ k=function(l,m,n)return(1-n)*l+n*m
 end;}b.o={p=function(q,r)r=r or 0
 q.s=W(r+1)q.t=W(r+2)q.u=W(r+3)q.v=W(r+4)q.w=q.x or bf
 q.x=be.getBool(r+1)end;
-y=function(q,e,f,z,A)local B={C=q,e=e,f=f,z=z,A=A,D=function(q)return q.C.x
-and not q.C.w
-and b.c.d(q.C.u,q.C.v,q.e,q.f,q.z,q.A)end;
-E=function(q)return q.C.x
-and b.c.d(q.C.u,q.C.v,q.e,q.f,q.z,q.A)end;}return B
-end;}function F(G,H,I,J,K,L)if G:D()then
-G.M=not G.M
+y=function(q,e,f,z,A,B)local C={D=q,e=e,f=f,z=z,A=A,B=B,E=function(q)return q.D.x
+and not q.D.w
+and b.c.d(q.D.u,q.D.v,q.e,q.f,q.z,q.A)end;
+F=function(q)return q.D.x
+and b.c.d(q.D.u,q.D.v,q.e,q.f,q.z,q.A)end;}return C
+end;}function G(H,B,I,J,K,L)if H:E()then
+H.M=not H.M
 end
-if G.M then
-X(N(K))bd.drawRectF(G.e,G.f,G.z,G.A)X(N(I))Y(G.e,G.f,G.z+1,G.A+1,H,0,0)X(N(J))Z(G.e,G.f,G.z,G.A)X(N(L))else
-X(N(L))Z(G.e,G.f,G.z,G.A)Y(G.e,G.f,G.z+1,G.A+1,H,0,0)end
+if H.M then
+X(N(K))bd.drawRectF(H.e,H.f,H.z,H.A)X(N(I))Y(H.e+1,H.f,H.z+1,H.A+1,B,0,0)X(N(J))Z(H.e,H.f,H.z,H.A)X(N(L))else
+X(N(L))Z(H.e,H.f,H.z,H.A)Y(H.e+1,H.f,H.z+1,H.A+1,B,0,0)end
 end
-function O(G,P,type)if type=="hold" then
-if G:E()then
-G.M=bg
-bb(P,G.M)return G.M
+function O(H,P,type)if type=="hold" then
+if H:F()then
+H.M=bg
+bb(P,H.M)return H.M
 else
-G.M=bf
-bb(P,G.M)return G.M
+H.M=bf
+bb(P,H.M)return H.M
 end
 elseif type=="click" then
-if G:D()then
+if H:E()then
 bb(P,bg)return bg
 else
 bb(P,bf)return bf
 end
 else
-if G:D()then
-G.Q=not G.Q
-bb(P,G.Q)return G.Q
+if H:E()then
+H.Q=not H.Q
+bb(P,H.Q)return bg
 end
 end
 end
@@ -62,5 +62,5 @@ S={b.o:y(1,1,45,14),b.o:y(48,1,46,14),b.o:y(1,17,45,14),b.o:y(48,17,46,14),b.o:y
 table.insert(T,bc("Box "..U))O(S[U],U)end
 I=bc("Text Color (Hex)")J=bc("Outline Color (Hex)")V=bc("Background Color (Hex)")L=bc("Default Button Color (Hex)")end
 function onDraw()for U=1,12 do
-F(S[U],T[U],I,J,V,L)end
+G(S[U],T[U],I,J,V,L)end
 end

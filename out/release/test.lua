@@ -1,47 +1,47 @@
 -- Author: StilauGamer
--- GitHub: https://github.com/StilauGamer
+-- GitHub: <GithubLink>
 -- Workshop: <WorkshopLink>
 --
 -- Developed & Minimized using LifeBoatAPI - Stormworks Lua plugin for VSCode
 -- https://code.visualstudio.com/download (search "Stormworks Lua with LifeboatAPI" extension)
 --      By Nameous Changey
--- Minimized Size: 697 (1029) chars
-D="0x"
-C=tonumber
-B=false
-A=true
-z=screen
-y=output.setBool
-x=z.drawRect
-w=z.drawTextBox
-v=z.setColor
-b("LifeBoatAPI")function c(d,e,f,g,h,i)if d:j()then
-d.k=not d.k
+-- Minimized Size: 683 (997) chars
+C="0x"
+B=tonumber
+A=false
+z=true
+y=screen
+x=output.setBool
+w=y.drawRect
+v=y.drawTextBox
+u=y.setColor
+function b(c,d,e,f,g,h)if c:i()then
+c.j=not c.j
 end
-if d.k then
-v(l(h))z.drawRectF(d.m,d.n,d.o,d.p)v(l(f))w(d.m,d.n,d.o+1,d.p+1,e,0,0)v(l(g))x(d.m,d.n,d.o,d.p)v(l(i))else
-v(l(i))x(d.m,d.n,d.o,d.p)w(d.m,d.n,d.o+1,d.p+1,e,0,0)end
+if c.j then
+u(k(g))y.drawRectF(c.l,c.m,c.n,c.o)u(k(e))v(c.l+1,c.m,c.n+1,c.o+1,d,0,0)u(k(f))w(c.l,c.m,c.n,c.o)u(k(h))else
+u(k(h))w(c.l,c.m,c.n,c.o)v(c.l+1,c.m,c.n+1,c.o+1,d,0,0)end
 end
-function q(d,r,type)if type=="hold" then
-if d:s()then
-d.k=A
-y(r,d.k)return d.k
+function p(c,q,type)if type=="hold" then
+if c:r()then
+c.j=z
+x(q,c.j)return c.j
 else
-d.k=B
-y(r,d.k)return d.k
+c.j=A
+x(q,c.j)return c.j
 end
 elseif type=="click" then
-if d:j()then
-y(r,A)return A
+if c:i()then
+x(q,z)return z
 else
-y(r,B)return B
+x(q,A)return A
 end
 else
-if d:j()then
-d.t=not d.t
-y(r,d.t)return d.t
+if c:i()then
+c.s=not c.s
+x(q,c.s)return z
 end
 end
 end
-function l(u)u=u:gsub("#","")return C(D..u:sub(1,2)),C(D..u:sub(3,4)),C(D..u:sub(5,6))end
-q()c()
+function k(t)t=t:gsub("#","")return B(C..t:sub(1,2)),B(C..t:sub(3,4)),B(C..t:sub(5,6))end
+p()b()

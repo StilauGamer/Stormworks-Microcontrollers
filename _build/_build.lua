@@ -1,4 +1,3 @@
-require([[_build._pre_buildactions]])
 
 --- @diagnostic disable: undefined-global
 
@@ -18,7 +17,8 @@ local params            = {
     forceNCBoilerplate      = arg[11]== "true",
     forceBoilerplate        = arg[12]== "true",
     shortenStringDuplicates = arg[13]== "true",
-    removeComments          = arg[14]== "true"      
+    removeComments          = arg[14]== "true",
+    skipCombinedFileOutput  = arg[15]== "true"
 };
 local rootDirs          = {};
 
@@ -27,13 +27,48 @@ for i=15, #arg do
 end
 
 local _builder = LifeBoatAPI.Tools.Builder:new(rootDirs, outputDir, luaDocsMCPath, luaDocsAddonPath)
-_builder:buildMicrocontroller([[MyMicrocontroller.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\Lua Sheit\Stormworks-Microcontrollers\MyMicrocontroller.lua]]), params)
-_builder:buildMicrocontroller([[test.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\Lua Sheit\Stormworks-Microcontrollers\test.lua]]), params)
-_builder:buildMicrocontroller([[ScreenFeatures.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\Lua Sheit\Stormworks-Microcontrollers\ScreenFeatures.lua]]), params)
-_builder:buildMicrocontroller([[PageSystem.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\Lua Sheit\Stormworks-Microcontrollers\PageSystem.lua]]), params)
-_builder:buildMicrocontroller([[MapOnScreen.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\Lua Sheit\Stormworks-Microcontrollers\MapOnScreen.lua]]), params)
-_builder:buildMicrocontroller([[ButtonsPanel.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\Lua Sheit\Stormworks-Microcontrollers\ButtonsPanel.lua]]), params)
-_builder:buildMicrocontroller([[libraries\ButtonFeatures.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\Lua Sheit\Stormworks-Microcontrollers\libraries\ButtonFeatures.lua]]), params)
-_builder:buildMicrocontroller([[libraries\RezisableScript.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\Lua Sheit\Stormworks-Microcontrollers\libraries\RezisableScript.lua]]), params)
-require([[_build._post_buildactions]])
+
+if onLBBuildStarted then onLBBuildStarted(_builder, params, LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers]])) end
+
+if onLBBuildFileStarted then onLBBuildFileStarted(_builder, params, LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers]]), [[test.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\test.lua]])) end
+
+local combinedText, outText, outFile = _builder:buildMicrocontroller([[test.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\test.lua]]), params)
+if onLBBuildFileComplete then onLBBuildFileComplete(LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers]]), [[test.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\test.lua]]), outFile, combinedText, outText) end
+
+if onLBBuildFileStarted then onLBBuildFileStarted(_builder, params, LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers]]), [[ScreenFeatures.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\ScreenFeatures.lua]])) end
+
+local combinedText, outText, outFile = _builder:buildMicrocontroller([[ScreenFeatures.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\ScreenFeatures.lua]]), params)
+if onLBBuildFileComplete then onLBBuildFileComplete(LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers]]), [[ScreenFeatures.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\ScreenFeatures.lua]]), outFile, combinedText, outText) end
+
+if onLBBuildFileStarted then onLBBuildFileStarted(_builder, params, LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers]]), [[PageSystem.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\PageSystem.lua]])) end
+
+local combinedText, outText, outFile = _builder:buildMicrocontroller([[PageSystem.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\PageSystem.lua]]), params)
+if onLBBuildFileComplete then onLBBuildFileComplete(LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers]]), [[PageSystem.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\PageSystem.lua]]), outFile, combinedText, outText) end
+
+if onLBBuildFileStarted then onLBBuildFileStarted(_builder, params, LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers]]), [[MyMicrocontroller.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\MyMicrocontroller.lua]])) end
+
+local combinedText, outText, outFile = _builder:buildMicrocontroller([[MyMicrocontroller.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\MyMicrocontroller.lua]]), params)
+if onLBBuildFileComplete then onLBBuildFileComplete(LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers]]), [[MyMicrocontroller.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\MyMicrocontroller.lua]]), outFile, combinedText, outText) end
+
+if onLBBuildFileStarted then onLBBuildFileStarted(_builder, params, LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers]]), [[MapOnScreen.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\MapOnScreen.lua]])) end
+
+local combinedText, outText, outFile = _builder:buildMicrocontroller([[MapOnScreen.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\MapOnScreen.lua]]), params)
+if onLBBuildFileComplete then onLBBuildFileComplete(LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers]]), [[MapOnScreen.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\MapOnScreen.lua]]), outFile, combinedText, outText) end
+
+if onLBBuildFileStarted then onLBBuildFileStarted(_builder, params, LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers]]), [[ButtonsPanel.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\ButtonsPanel.lua]])) end
+
+local combinedText, outText, outFile = _builder:buildMicrocontroller([[ButtonsPanel.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\ButtonsPanel.lua]]), params)
+if onLBBuildFileComplete then onLBBuildFileComplete(LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers]]), [[ButtonsPanel.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\ButtonsPanel.lua]]), outFile, combinedText, outText) end
+
+if onLBBuildFileStarted then onLBBuildFileStarted(_builder, params, LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers]]), [[libraries\ButtonFeatures.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\libraries\ButtonFeatures.lua]])) end
+
+local combinedText, outText, outFile = _builder:buildMicrocontroller([[libraries\ButtonFeatures.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\libraries\ButtonFeatures.lua]]), params)
+if onLBBuildFileComplete then onLBBuildFileComplete(LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers]]), [[libraries\ButtonFeatures.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\libraries\ButtonFeatures.lua]]), outFile, combinedText, outText) end
+
+if onLBBuildFileStarted then onLBBuildFileStarted(_builder, params, LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers]]), [[libraries\RezisableScript.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\libraries\RezisableScript.lua]])) end
+
+local combinedText, outText, outFile = _builder:buildMicrocontroller([[libraries\RezisableScript.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\libraries\RezisableScript.lua]]), params)
+if onLBBuildFileComplete then onLBBuildFileComplete(LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers]]), [[libraries\RezisableScript.lua]], LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers\libraries\RezisableScript.lua]]), outFile, combinedText, outText) end
+
+if onLBBuildComplete then onLBBuildComplete(_builder, params, LifeBoatAPI.Tools.Filepath:new([[e:\Coding Sheit\SW controllers\Stormworks-Microcontrollers]])) end
 --- @diagnostic enable: undefined-global

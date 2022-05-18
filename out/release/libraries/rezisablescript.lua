@@ -1,11 +1,11 @@
 -- Author: StilauGamer
--- GitHub: https://github.com/StilauGamer
+-- GitHub: <GithubLink>
 -- Workshop: <WorkshopLink>
 --
 -- Developed & Minimized using LifeBoatAPI - Stormworks Lua plugin for VSCode
 -- https://code.visualstudio.com/download (search "Stormworks Lua with LifeboatAPI" extension)
 --      By Nameous Changey
--- Minimized Size: 837 (1169) chars
+-- Minimized Size: 837 (1151) chars
 
 b.c:d(1,"9x5",true,false)e=screen.drawRectF
 f=property.getText

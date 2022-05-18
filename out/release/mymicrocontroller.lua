@@ -1,92 +1,92 @@
 -- Author: StilauGamer
--- GitHub: https://github.com/StilauGamer
+-- GitHub: <GithubLink>
 -- Workshop: <WorkshopLink>
 --
 -- Developed & Minimized using LifeBoatAPI - Stormworks Lua plugin for VSCode
 -- https://code.visualstudio.com/download (search "Stormworks Lua with LifeboatAPI" extension)
 --      By Nameous Changey
--- Minimized Size: 2054 (2388) chars
-bs="Start"
-br="Pumps"
-bq="Clutch"
-bp=240
-bo=true
-bn=false
-bm=input
-bl=screen
-bk=bl.drawRect
-bj=bl.setColor
-bi=output.setBool
-bh=bl.drawRectF
-bg=bm.getNumber
+-- Minimized Size: 2062 (2378) chars
+bt="Start"
+bs="Pumps"
+br="Clutch"
+bq=240
+bp=true
+bo=false
+bn=input
+bm=screen
+bl=bm.drawRect
+bk=bm.setColor
+bj=output.setBool
+bi=bm.drawRectF
+bh=bn.getNumber
 b=b or{}b.c={d=function(e,f,g,h,i,j)return e>g and e<g+i and f>h and f<h+j;
 end;
 k=function(l,m,n)return(1-n)*l+n*m
 end;}b.o={p=function(q,r)r=r or 0
-q.s=bg(r+1)q.t=bg(r+2)q.u=bg(r+3)q.v=bg(r+4)q.w=q.x or bn
-q.x=bm.getBool(r+1)end;
-y=function(q,e,f,z,A)local B={C=q,e=e,f=f,z=z,A=A,D=function(q)return q.C.x
-and not q.C.w
-and b.c.d(q.C.u,q.C.v,q.e,q.f,q.z,q.A)end;
-E=function(q)return q.C.x
-and b.c.d(q.C.u,q.C.v,q.e,q.f,q.z,q.A)end;}return B
-end;}F.G:H(1,"9x5",bo,bn)I=bh
-J=property.getText
-K="00019209B400AAAA793CA54A555690015244449415500BA0004903800009254956D4592EC54EC51C53A4F31C5354E52455545594104110490A201C7008A04504FFFE57DAD75C7246D6DCF34EF3487256B7DAE92E64D4975A924EBEDAF6DAF6DED74856B2D75A711CE924B6D4B6A4B6FAB55AB524E54ED24C911264965400000E"
-L={}M=0
-for N in K:gmatch("....")do L[M+1]=tonumber(N,16)M=M+1 end
-function O(e,f,n,P,Q,R)P=P or 1
-Q=Q or 1
-if Q>2 then n=n:reverse()end
-n=n:upper()for S in n:gmatch(".")do
-T=S:byte()-31 if 0<T and T<=M then
-for U=1,15 do
-if Q>2 then V=2^U else V=2^(16-U)end
-if L[T]&V==V then
-W,X=((U-1)%3)*P,((U-1)//3)*P
-if Q%2==1 then I(e+W,f+X,P,P)else I(e+5-X,f+W,P,P)end
+q.s=bh(r+1)q.t=bh(r+2)q.u=bh(r+3)q.v=bh(r+4)q.w=q.x or bo
+q.x=bn.getBool(r+1)end;
+y=function(q,e,f,z,A,B)local C={D=q,e=e,f=f,z=z,A=A,B=B,E=function(q)return q.D.x
+and not q.D.w
+and b.c.d(q.D.u,q.D.v,q.e,q.f,q.z,q.A)end;
+F=function(q)return q.D.x
+and b.c.d(q.D.u,q.D.v,q.e,q.f,q.z,q.A)end;}return C
+end;}G.H:I(1,"9x5",bp,bo)J=bi
+K=property.getText
+L="00019209B400AAAA793CA54A555690015244449415500BA0004903800009254956D4592EC54EC51C53A4F31C5354E52455545594104110490A201C7008A04504FFFE57DAD75C7246D6DCF34EF3487256B7DAE92E64D4975A924EBEDAF6DAF6DED74856B2D75A711CE924B6D4B6A4B6FAB55AB524E54ED24C911264965400000E"
+M={}N=0
+for O in L:gmatch("....")do M[N+1]=tonumber(O,16)N=N+1 end
+function P(e,f,n,Q,R,S)Q=Q or 1
+R=R or 1
+if R>2 then n=n:reverse()end
+n=n:upper()for T in n:gmatch(".")do
+U=T:byte()-31 if 0<U and U<=N then
+for V=1,15 do
+if R>2 then W=2^V else W=2^(16-V)end
+if M[U]&W==W then
+X,Y=((V-1)%3)*Q,((V-1)//3)*Q
+if R%2==1 then J(e+X,f+Y,Q,Q)else J(e+5-Y,f+X,Q,Q)end
 end
 end
-if L[T]&1==1 and not R then
-U=2*P
+if M[U]&1==1 and not S then
+V=2*Q
 else
-U=4*P
+V=4*Q
 end
-if Q%2==1 then e=e+U else f=f+U end
+if R%2==1 then e=e+V else f=f+V end
 end
 end
 end
-function onDraw()O(10,10,"Hello, World!",5)end
-Y=b.o:y(1,1,29,8)Z=b.o:y(1,11,29,8)bb=b.o:y(1,21,29,8)function onTick()b.o:p()if Y:E()then
-bi(1,bo)bc=bo
+function onDraw()P(10,10,"Hello, World!",5)end
+Z=b.o:y(1,1,29,8)bb=b.o:y(1,11,29,8)bc=b.o:y(1,21,29,8)function onTick()b.o:p()if Z:F()then
+bj(1,bp)bd=bp
 else
-bi(1,bn)bc=bn
+bj(1,bo)bd=bo
 end
-if Z:D()then
-bd=not bd
-end
-if bd then
-bi(2,bo)bd=bo
-else
-bi(2,bn)bd=bn
-end
-if bb:D()then
+if bb:E()then
 be=not be
 end
 if be then
-bi(3,bo)be=bo
+bj(2,bp)be=bp
 else
-bi(3,bn)be=bn
+bj(2,bo)be=bo
+end
+if bc:E()then
+bf=not bf
+end
+if bf then
+bj(3,bp)bf=bp
+else
+bj(3,bo)bf=bo
 end
 end
-function onDraw()bj(bp,bp,bp)O(6,3,bs)O(6,13,br)O(4,23,bq)if bc then
-bh(1,1,29,8)bj(0,0,0)O(6,3,bs)bj(bp,bp,bp)else
-bk(1,1,29,8)end
-if bd then
-bh(1,11,29,8)bj(0,0,0)O(6,13,br)bj(bp,bp,bp)else
-bk(1,11,29,8)end
+function onDraw()bk(bq,bq,bq)P(6,3,bt)P(6,13,bs)P(4,23,br)if bd then
+bi(1,1,29,8)bk(0,0,0)P(6,3,bt)bk(bq,bq,bq)else
+bl(1,1,29,8)end
 if be then
-bh(1,21,29,8)bj(0,0,0)O(4,23,bq)bj(bp,bp,bp)else
-bk(1,21,29,8)end
-bf()end
-function bf()bk(1,1,29,8)bk(1,11,29,8)bk(1,21,29,8)end
+bi(1,11,29,8)bk(0,0,0)P(6,13,bs)bk(bq,bq,bq)else
+bl(1,11,29,8)end
+if bf then
+bi(1,21,29,8)bk(0,0,0)P(4,23,br)bk(bq,bq,bq)else
+bl(1,21,29,8)end
+bg()end
+function bg()bl(1,1,29,8)bl(1,11,29,8)bl(1,21,29,8)end
