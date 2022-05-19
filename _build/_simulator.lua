@@ -1,5 +1,5 @@
 -- Author: StilauGamer
--- GitHub: https://github.com/profiles/stilaugamer
+-- GitHub: <GithubLink>
 -- Workshop: <WorkshopLink>
 --
 --- Developed using LifeBoatAPI - Stormworks Lua plugin for VSCode - https://code.visualstudio.com/download (search "Stormworks Lua with LifeboatAPI" extension)
@@ -16,7 +16,7 @@ simulator = __simulator -- 0.0.11 easier to read by far but could be overwritten
 -- compatibility with 0.0.7 projects
 LBSimulatorInputHelpers = LifeBoatAPI.Tools.SimulatorInputHelpers
 
-require("MapOnScreen");
+require("advancedmapsystem");
 
 -- compatibility with 0.0.4 projects
 if onLBSimulatorInit then

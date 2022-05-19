@@ -18,38 +18,46 @@ function toggleButtonUI(btn, text, textColor, outlineColor, fillColor, defaultCo
     end
   end
 ---@endsection
+
 ---@section toggleButtonClick
-  function toggleButtonClick(btn, compOutput, type)
-    if type == "hold" then                       -- Checks if the button is on the mode "hold"
-      if btn:lbbutton_isHeld() then              -- Activates when the button is held.
-        btn.toggled = true                       -- Sets the btn.toggled to true so it activates the UI
-        output.setBool(compOutput, btn.toggled)  -- Sets the comp output to the btn.toggled value
-        return btn.toggled
-      else
-        btn.toggled = false                      -- Sets the btn.toggled to false so it deactivates the UI
-        output.setBool(compOutput, btn.toggled)  -- Sets the comp output to the btn.toggled value
-        return btn.toggled
-      end
-    elseif type == "click" then
-      if btn:lbbutton_isClicked() then
-        output.setBool(compOutput, true)
-        return true
-      else
-        output.setBool(compOutput, false)
-        return false
-      end
+  function toggleButtonClick_hold(btn, compOutput)
+    if btn:lbbutton_isHeld() then              -- Activates when the button is held.
+      btn.toggled = true                       -- Sets the btn.toggled to true so it activates the UI
+      output.setBool(compOutput, btn.toggled)  -- Sets the comp output to the btn.toggled value
+      return btn.toggled
     else
-      if btn:lbbutton_isClicked() then           -- Activates when the button is clicked.
-        btn.clicked = not btn.clicked            -- Sets the btn.clicked to the opposite of the value it had.
-        output.setBool(compOutput, btn.clicked)  -- Sets the comp output to the btn.clicked value.
-        return true
-      end
+      btn.toggled = false                      -- Sets the btn.toggled to false so it deactivates the UI
+      output.setBool(compOutput, btn.toggled)  -- Sets the comp output to the btn.toggled value
+      return btn.toggled
     end
   end
----@endsection
----@section hex2rgb
+  ---@endsection
+
+  ---@section toggleButtonClick_click
+  function toggleButtonClick_click(btn, compOutput)
+    if btn:lbbutton_isClicked() then
+      output.setBool(compOutput, true)
+      return true
+    else
+      output.setBool(compOutput, false)
+      return false
+    end
+  end
+  ---@endsection
+
+  ---@section toggleButtonClick_toggle
+  function toggleButtonClick_toggle(btn, compOutput)
+    if btn:lbbutton_isClicked() then           -- Activates when the button is clicked.
+      btn.clicked = not btn.clicked            -- Sets the btn.clicked to the opposite of the value it had.
+      output.setBool(compOutput, btn.clicked)  -- Sets the comp output to the btn.clicked value.
+      return btn.clicked
+    end
+  end
+  ---@endsection
+
+  ---@section hex2rgb
   function hex2rgb(hex)
       hex = hex:gsub("#","")  -- Removes the # if it had one.
       return tonumber("0x"..hex:sub(1,2)), tonumber("0x"..hex:sub(3,4)), tonumber("0x"..hex:sub(5,6))  -- Returns the hex in 3 different values as R, G and B
   end
----@endsection
+  ---@endsection

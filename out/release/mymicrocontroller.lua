@@ -6,9 +6,9 @@
 -- https://code.visualstudio.com/download (search "Stormworks Lua with LifeboatAPI" extension)
 --      By Nameous Changey
 -- Minimized Size: 2062 (2378) chars
-bt="Start"
-bs="Pumps"
-br="Clutch"
+bt="Pumps"
+bs="Clutch"
+br="Start"
 bq=240
 bp=true
 bo=false
@@ -79,14 +79,14 @@ else
 bj(3,bo)bf=bo
 end
 end
-function onDraw()bk(bq,bq,bq)P(6,3,bt)P(6,13,bs)P(4,23,br)if bd then
-bi(1,1,29,8)bk(0,0,0)P(6,3,bt)bk(bq,bq,bq)else
+function onDraw()bk(bq,bq,bq)P(6,3,br)P(6,13,bt)P(4,23,bs)if bd then
+bi(1,1,29,8)bk(0,0,0)P(6,3,br)bk(bq,bq,bq)else
 bl(1,1,29,8)end
 if be then
-bi(1,11,29,8)bk(0,0,0)P(6,13,bs)bk(bq,bq,bq)else
+bi(1,11,29,8)bk(0,0,0)P(6,13,bt)bk(bq,bq,bq)else
 bl(1,11,29,8)end
 if bf then
-bi(1,21,29,8)bk(0,0,0)P(4,23,br)bk(bq,bq,bq)else
+bi(1,21,29,8)bk(0,0,0)P(4,23,bs)bk(bq,bq,bq)else
 bl(1,21,29,8)end
 bg()end
 function bg()bl(1,1,29,8)bl(1,11,29,8)bl(1,21,29,8)end

@@ -1,4 +1,4 @@
 require("LifeBoatAPI")
 require("ButtonFeatures")
-toggleButtonClick()
+toggleButtonClick_toggle()
 toggleButtonUI()

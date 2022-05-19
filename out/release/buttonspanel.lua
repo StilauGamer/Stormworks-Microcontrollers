@@ -5,10 +5,9 @@
 -- Developed & Minimized using LifeBoatAPI - Stormworks Lua plugin for VSCode
 -- https://code.visualstudio.com/download (search "Stormworks Lua with LifeboatAPI" extension)
 --      By Nameous Changey
--- Minimized Size: 1684 (2000) chars
-bi="0x"
-bh=tonumber
-bg=true
+-- Minimized Size: 1511 (1827) chars
+bh="0x"
+bg=tonumber
 bf=false
 be=input
 bd=screen
@@ -36,31 +35,18 @@ if H.M then
 X(N(K))bd.drawRectF(H.e,H.f,H.z,H.A)X(N(I))Y(H.e+1,H.f,H.z+1,H.A+1,B,0,0)X(N(J))Z(H.e,H.f,H.z,H.A)X(N(L))else
 X(N(L))Z(H.e,H.f,H.z,H.A)Y(H.e+1,H.f,H.z+1,H.A+1,B,0,0)end
 end
-function O(H,P,type)if type=="hold" then
-if H:F()then
-H.M=bg
+function O(H,P)if H:F()then
+H.M=true
 bb(P,H.M)return H.M
 else
 H.M=bf
 bb(P,H.M)return H.M
 end
-elseif type=="click" then
-if H:E()then
-bb(P,bg)return bg
-else
-bb(P,bf)return bf
 end
-else
-if H:E()then
-H.Q=not H.Q
-bb(P,H.Q)return bg
-end
-end
-end
-function N(R)R=R:gsub("#","")return bh(bi..R:sub(1,2)),bh(bi..R:sub(3,4)),bh(bi..R:sub(5,6))end
-S={b.o:y(1,1,45,14),b.o:y(48,1,46,14),b.o:y(1,17,45,14),b.o:y(48,17,46,14),b.o:y(1,33,45,14),b.o:y(48,33,46,14),b.o:y(1,49,45,14),b.o:y(48,49,46,14),b.o:y(1,65,45,14),b.o:y(48,65,46,14),b.o:y(1,81,45,14),b.o:y(48,81,46,14)}function onTick()b.o:p()T={}for U=1,12 do
-table.insert(T,bc("Box "..U))O(S[U],U)end
+function N(Q)Q=Q:gsub("#","")return bg(bh..Q:sub(1,2)),bg(bh..Q:sub(3,4)),bg(bh..Q:sub(5,6))end
+R={b.o:y(1,1,45,14),b.o:y(48,1,46,14),b.o:y(1,17,45,14),b.o:y(48,17,46,14),b.o:y(1,33,45,14),b.o:y(48,33,46,14),b.o:y(1,49,45,14),b.o:y(48,49,46,14),b.o:y(1,65,45,14),b.o:y(48,65,46,14),b.o:y(1,81,45,14),b.o:y(48,81,46,14)}function onTick()b.o:p()S={}for T=1,12 do
+table.insert(S,bc("Box "..T))U(R[T],T)end
 I=bc("Text Color (Hex)")J=bc("Outline Color (Hex)")V=bc("Background Color (Hex)")L=bc("Default Button Color (Hex)")end
-function onDraw()for U=1,12 do
-G(S[U],T[U],I,J,V,L)end
+function onDraw()for T=1,12 do
+G(R[T],S[T],I,J,V,L)end
 end
