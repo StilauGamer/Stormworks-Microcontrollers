@@ -32,18 +32,20 @@
         "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.10//assets/luasocket/dll/socket/core.dll",
         "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.10//assets/luasocket/dll/mime/core.dll",
         "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/luasocket/dll/socket/core.dll",
-        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/luasocket/dll/mime/core.dll"
+        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/luasocket/dll/mime/core.dll",
+        "c:/Users/StianAlmelienLauvdal/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/luasocket/dll/socket/core.dll",
+        "c:/Users/StianAlmelienLauvdal/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/luasocket/dll/mime/core.dll"
     ],
     "lua.debug.settings.path": [
-        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/luasocket/?.lua",
-        "E:/Coding Sheit/SW controllers/Stormworks-Microcontrollers/libraries/?.lua",
-        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/LifeBoatAPI/Microcontroller/?.lua",
-        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/LifeBoatAPI/Tools/?.lua"
+        "c:/Users/StianAlmelienLauvdal/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/luasocket/?.lua",
+        "C:/Users/StianAlmelienLauvdal/Documents/Coding sheit/Stormworks-Microcontrollers/libraries/?.lua",
+        "c:/Users/StianAlmelienLauvdal/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/LifeBoatAPI/Microcontroller/?.lua",
+        "c:/Users/StianAlmelienLauvdal/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/LifeBoatAPI/Tools/?.lua"
     ],
     "Lua.workspace.library": [
-        "E:/Coding Sheit/SW controllers/Stormworks-Microcontrollers/libraries/",
-        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/LifeBoatAPI/Microcontroller/",
-        "c:/Users/stian/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/LifeBoatAPI/Tools/"
+        "C:/Users/StianAlmelienLauvdal/Documents/Coding sheit/Stormworks-Microcontrollers/libraries/",
+        "c:/Users/StianAlmelienLauvdal/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/LifeBoatAPI/Microcontroller/",
+        "c:/Users/StianAlmelienLauvdal/.vscode/extensions/nameouschangey.lifeboatapi-0.0.13//assets/LifeBoatAPI/Tools/"
     ],
     "lua.debug.settings.luaVersion": "5.3",
     "lua.debug.settings.luaArch": "x86",
