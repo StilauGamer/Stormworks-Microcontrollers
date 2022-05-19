@@ -19,12 +19,16 @@ function onTick()
     gpsY = input.getNumber(6)
     ticks = ticks + 1
 
-
     -- Buttons
-    buttons = {
-        LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(w-13, 2, 10, 10, "!"),
-        LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(w-13, 13, 10, 10, "!")
-    }
+    if ticks < 5 then
+        buttons = {
+            LifeBoatAPI.LBTouchScreen:lbtouchscreen_newButton(w-13, 2, 10, 10, "!")
+        }
+    end
+
+    if toggleButtonClick_toggle(buttons[1], 1) then
+        forceGps = not forceGps
+    end
 
     -- Force Map values to the GPS
     if forceGps then
@@ -53,5 +57,4 @@ function onDraw()
 
     -- Buttons
     toggleButtonUI(buttons[1], buttons[1].text, "000000", "FFFFFF", "FFFFFF", "000000")
-    toggleButtonUI(buttons[2], buttons[2].text, "000000", "FFFFFF", "FFFFFF", "000000")
 end
