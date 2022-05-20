@@ -1,14 +1,14 @@
 -- Author: StilauGamer
--- GitHub: <GithubLink>
+-- GitHub: https://github.com/profiles/stilaugamer
 -- Workshop: <WorkshopLink>
 --
 -- Developed & Minimized using LifeBoatAPI - Stormworks Lua plugin for VSCode
 -- https://code.visualstudio.com/download (search "Stormworks Lua with LifeboatAPI" extension)
 --      By Nameous Changey
--- Minimized Size: 1827 (2143) chars
+-- Minimized Size: 1827 (2170) chars
 by="0x"
-bx="000000"
-bw="636363"
+bx="636363"
+bw="000000"
 bv="hold"
 bu=105
 bt=255
@@ -82,4 +82,4 @@ U=bc
 V=bd
 end
 end
-function onDraw()Y=bp.getWidth()Z=bp.getHeight()bp.drawMap(U,V,R)bk(bt,0,0)bg,bh=map.mapToScreen(U,V,R,Y,Z,bc,bd)bp.drawCircleF(bg,bh,1)bk(bt,bt,0)bn(0,0,Y-1,Z-1)bn(0,0,10,Z-1)bk(bu,bu,bu)bl(1,1,9,Z-2)G(bb[1],"!",bx,bw,bw,bx)G(bb[2],">",bx,bw,bw,bx)G(bb[3],"_",bx,bw,bw,bx)G(bb[4],"<",bx,bw,bw,bx)G(bb[5],"^",bx,bw,bw,bx)end
+function onDraw()Y=bp.getWidth()Z=bp.getHeight()bp.drawMap(U,V,R)bk(bt,0,0)bg,bh=map.mapToScreen(U,V,R,Y,Z,bc,bd)bp.drawCircleF(bg,bh,1)bk(bt,bt,0)bn(0,0,Y-1,Z-1)bn(0,0,10,Z-1)bk(bu,bu,bu)bl(1,1,9,Z-2)G(bb[1],"!",bw,bx,bx,bw)G(bb[2],">",bw,bx,bx,bw)G(bb[3],"_",bw,bx,bx,bw)G(bb[4],"<",bw,bx,bx,bw)G(bb[5],"^",bw,bx,bx,bw)end

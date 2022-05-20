@@ -1,14 +1,14 @@
 -- Author: StilauGamer
--- GitHub: <GithubLink>
+-- GitHub: https://github.com/profiles/stilaugamer
 -- Workshop: <WorkshopLink>
 --
 -- Developed & Minimized using LifeBoatAPI - Stormworks Lua plugin for VSCode
 -- https://code.visualstudio.com/download (search "Stormworks Lua with LifeboatAPI" extension)
 --      By Nameous Changey
--- Minimized Size: 1315 (1631) chars
-bk="0000FF"
+-- Minimized Size: 1315 (1658) chars
+bk="0x"
 bj="FFFFFF"
-bi="0x"
+bi="0000FF"
 bh=tonumber
 bg=true
 bf=false
@@ -45,7 +45,7 @@ H.M=bf
 bc(P,H.M)return H.M
 end
 end
-function N(Q)Q=Q:gsub("#","")return bh(bi..Q:sub(1,2)),bh(bi..Q:sub(3,4)),bh(bi..Q:sub(5,6))end
+function N(Q)Q=Q:gsub("#","")return bh(bk..Q:sub(1,2)),bh(bk..Q:sub(3,4)),bh(bk..Q:sub(5,6))end
 R={b.o:y(0,0,40,20),b.o:y(42,0,40,20)}function onTick()b.o:p()if S(R[1],1)then
 T=bg
 U=bf
@@ -56,6 +56,6 @@ end
 if U then
 bc(1)end
 end
-function onDraw()G(R[1],"Page 1",bk,bj,bj,bj)G(R[2],"Page 2",bk,bj,bj,bj)V=bd.getHeight()W=bd.getWidth()if T then
+function onDraw()G(R[1],"Page 1",bi,bj,bj,bj)G(R[2],"Page 2",bi,bj,bj,bj)V=bd.getHeight()W=bd.getWidth()if T then
 Z(0,0,W,V,"Test 1",0,0)end
 end

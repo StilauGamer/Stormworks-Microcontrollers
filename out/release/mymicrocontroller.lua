@@ -1,14 +1,14 @@
 -- Author: StilauGamer
--- GitHub: <GithubLink>
+-- GitHub: https://github.com/profiles/stilaugamer
 -- Workshop: <WorkshopLink>
 --
 -- Developed & Minimized using LifeBoatAPI - Stormworks Lua plugin for VSCode
 -- https://code.visualstudio.com/download (search "Stormworks Lua with LifeboatAPI" extension)
 --      By Nameous Changey
--- Minimized Size: 2062 (2378) chars
-bt="Pumps"
+-- Minimized Size: 2062 (2405) chars
+bt="Start"
 bs="Clutch"
-br="Start"
+br="Pumps"
 bq=240
 bp=true
 bo=false
@@ -79,11 +79,11 @@ else
 bj(3,bo)bf=bo
 end
 end
-function onDraw()bk(bq,bq,bq)P(6,3,br)P(6,13,bt)P(4,23,bs)if bd then
-bi(1,1,29,8)bk(0,0,0)P(6,3,br)bk(bq,bq,bq)else
+function onDraw()bk(bq,bq,bq)P(6,3,bt)P(6,13,br)P(4,23,bs)if bd then
+bi(1,1,29,8)bk(0,0,0)P(6,3,bt)bk(bq,bq,bq)else
 bl(1,1,29,8)end
 if be then
-bi(1,11,29,8)bk(0,0,0)P(6,13,bt)bk(bq,bq,bq)else
+bi(1,11,29,8)bk(0,0,0)P(6,13,br)bk(bq,bq,bq)else
 bl(1,11,29,8)end
 if bf then
 bi(1,21,29,8)bk(0,0,0)P(4,23,bs)bk(bq,bq,bq)else

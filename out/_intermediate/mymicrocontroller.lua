@@ -1140,7 +1140,7 @@ LifeBoatAPI.LBTouchScreen = {
                 screen.drawRectF(this.x, this.y, this.width, this.height);
 
                 (this:lbstyledbutton_isHeld() and this.textPushColor or this.textColor):lbcolorrgba_setColor()
-                screen.drawTextBox(this.x+2, this.y+1, this.width-1, this.height-1, this.text, 0, 0)
+                screen.drawTextBox(this.x+1, this.y+1, this.width-1, this.height-1, this.text, 0, 0)
 
                 this.borderColor:lbcolorrgba_setColor()
                 screen.drawRect(this.x, this.y, this.width, this.height)
