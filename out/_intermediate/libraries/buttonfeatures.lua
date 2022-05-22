@@ -51,7 +51,7 @@ function toggleButtonUI(btn, text, textColor, outlineColor, fillColor, defaultCo
     if btn:lbbutton_isClicked() then           -- Activates when the button is clicked.
       btn.clicked = not btn.clicked            -- Sets the btn.clicked to the opposite of the value it had.
       output.setBool(compOutput, btn.clicked)  -- Sets the comp output to the btn.clicked value.
-      return btn.clicked
+      return true
     end
   end
   ---@endsection

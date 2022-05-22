@@ -1,15 +1,15 @@
 -- Author: StilauGamer
--- GitHub: https://github.com/profiles/stilaugamer
+-- GitHub: <GithubLink>
 -- Workshop: <WorkshopLink>
 --
 -- Developed & Minimized using LifeBoatAPI - Stormworks Lua plugin for VSCode
 -- https://code.visualstudio.com/download (search "Stormworks Lua with LifeboatAPI" extension)
 --      By Nameous Changey
--- Minimized Size: 1827 (2170) chars
-by="0x"
-bx="636363"
-bw="000000"
-bv="hold"
+-- Minimized Size: 1827 (2143) chars
+by="hold"
+bx="000000"
+bw="636363"
+bv="0x"
 bu=105
 bt=255
 bs=tonumber
@@ -49,7 +49,7 @@ H.M=br
 bo(P,H.M)return H.M
 end
 end
-function N(Q)Q=Q:gsub("#","")return bs(by..Q:sub(1,2)),bs(by..Q:sub(3,4)),bs(by..Q:sub(5,6))end
+function N(Q)Q=Q:gsub("#","")return bs(bv..Q:sub(1,2)),bs(bv..Q:sub(3,4)),bs(bv..Q:sub(5,6))end
 R=1
 S=.03
 T=7.5
@@ -65,16 +65,16 @@ end
 if bf(bb[1],1)then
 X=not X
 end
-if bf(bb[2],2,bv)then
+if bf(bb[2],2,by)then
 U=U+T
 end
-if bf(bb[3],3,bv)then
+if bf(bb[3],3,by)then
 V=V-T
 end
-if bf(bb[4],4,bv)then
+if bf(bb[4],4,by)then
 U=U-T
 end
-if bf(bb[5],5,bv)then
+if bf(bb[5],5,by)then
 V=V+T
 end
 if X then
@@ -82,4 +82,4 @@ U=bc
 V=bd
 end
 end
-function onDraw()Y=bp.getWidth()Z=bp.getHeight()bp.drawMap(U,V,R)bk(bt,0,0)bg,bh=map.mapToScreen(U,V,R,Y,Z,bc,bd)bp.drawCircleF(bg,bh,1)bk(bt,bt,0)bn(0,0,Y-1,Z-1)bn(0,0,10,Z-1)bk(bu,bu,bu)bl(1,1,9,Z-2)G(bb[1],"!",bw,bx,bx,bw)G(bb[2],">",bw,bx,bx,bw)G(bb[3],"_",bw,bx,bx,bw)G(bb[4],"<",bw,bx,bx,bw)G(bb[5],"^",bw,bx,bx,bw)end
+function onDraw()Y=bp.getWidth()Z=bp.getHeight()bp.drawMap(U,V,R)bk(bt,0,0)bg,bh=map.mapToScreen(U,V,R,Y,Z,bc,bd)bp.drawCircleF(bg,bh,1)bk(bt,bt,0)bn(0,0,Y-1,Z-1)bn(0,0,10,Z-1)bk(bu,bu,bu)bl(1,1,9,Z-2)G(bb[1],"!",bx,bw,bw,bx)G(bb[2],">",bx,bw,bw,bx)G(bb[3],"_",bx,bw,bw,bx)G(bb[4],"<",bx,bw,bw,bx)G(bb[5],"^",bx,bw,bw,bx)end

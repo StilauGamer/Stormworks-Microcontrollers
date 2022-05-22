@@ -1,11 +1,11 @@
 -- Author: StilauGamer
--- GitHub: https://github.com/profiles/stilaugamer
+-- GitHub: <GithubLink>
 -- Workshop: <WorkshopLink>
 --
 -- Developed & Minimized using LifeBoatAPI - Stormworks Lua plugin for VSCode
 -- https://code.visualstudio.com/download (search "Stormworks Lua with LifeboatAPI" extension)
 --      By Nameous Changey
--- Minimized Size: 1315 (1658) chars
+-- Minimized Size: 1315 (1631) chars
 bk="0x"
 bj="FFFFFF"
 bi="0000FF"

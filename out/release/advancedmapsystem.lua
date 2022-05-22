@@ -1,34 +1,40 @@
 -- Author: StilauGamer
--- GitHub: https://github.com/profiles/stilaugamer
+-- GitHub: <GithubLink>
 -- Workshop: <WorkshopLink>
 --
 -- Developed & Minimized using LifeBoatAPI - Stormworks Lua plugin for VSCode
 -- https://code.visualstudio.com/download (search "Stormworks Lua with LifeboatAPI" extension)
 --      By Nameous Changey
--- Minimized Size: 1629 (1972) chars
-bB="0x"
-bA="FFFFFF"
-bz="!"
-by="000000"
-bx=tonumber
-bw=true
-bv=false
-bu=input
-bt=output
-bs=screen
-br=bs.drawLine
-bq=bt.setBool
-bp=bs.drawRect
-bo=bs.drawTextBox
-bn=bs.drawRectF
-bm=bs.setColor
-bl=bu.getNumber
+-- Minimized Size: 2262 (2578) chars
+cg="000000"
+cf="0x"
+ce="!"
+cd="FFFFFF"
+cc=255
+cb=tonumber
+ca=true
+bZ=false
+bY=input
+bX=math
+bW=screen
+bV=bW.drawTriangleF
+bU=bW.drawLine
+bT=bX.min
+bS=bX.pi
+bR=bX.cos
+bQ=bX.sin
+bP=output.setBool
+bO=bW.drawRect
+bN=bW.drawTextBox
+bM=bW.drawRectF
+bL=bW.setColor
+bK=bY.getNumber
 b=b or{}b.c={d=function(e,f,g,h,i,j)return e>g and e<g+i and f>h and f<h+j;
 end;
 k=function(l,m,n)return(1-n)*l+n*m
 end;}b.o={p=function(q,r)r=r or 0
-q.s=bl(r+1)q.t=bl(r+2)q.u=bl(r+3)q.v=bl(r+4)q.w=q.x or bv
-q.x=bu.getBool(r+1)end;
+q.s=bK(r+1)q.t=bK(r+2)q.u=bK(r+3)q.v=bK(r+4)q.w=q.x or bZ
+q.x=bY.getBool(r+1)end;
 y=function(q,e,f,z,A,B)local C={D=q,e=e,f=f,z=z,A=A,B=B,E=function(q)return q.D.x
 and not q.D.w
 and b.c.d(q.D.u,q.D.v,q.e,q.f,q.z,q.A)end;}return C
@@ -36,41 +42,63 @@ end;}function F(G,B,H,I,J,K)if G:E()then
 G.L=not G.L
 end
 if G.L then
-bm(M(J))bn(G.e,G.f,G.z,G.A)bm(M(H))bo(G.e+1,G.f,G.z+1,G.A+1,B,0,0)bm(M(I))bp(G.e,G.f,G.z,G.A)bm(M(K))else
-bm(M(K))bp(G.e,G.f,G.z,G.A)bo(G.e+1,G.f,G.z+1,G.A+1,B,0,0)end
+bL(M(J))bM(G.e,G.f,G.z,G.A)bL(M(H))bN(G.e+1,G.f,G.z+1,G.A+1,B,0,0)bL(M(I))bO(G.e,G.f,G.z,G.A)bL(M(K))else
+bL(M(K))bO(G.e,G.f,G.z,G.A)bN(G.e+1,G.f,G.z+1,G.A+1,B,0,0)end
 end
 function N(G,O)if G:E()then
-bq(O,bw)return bw
+bP(O,ca)return ca
 else
-bq(O,bv)return bv
+bP(O,bZ)return bZ
 end
 end
 function P(G,O)if G:E()then
 G.Q=not G.Q
-bq(O,G.Q)return G.Q
+bP(O,G.Q)return ca
 end
 end
-function M(R)R=R:gsub("#","")return bx(bB..R:sub(1,2)),bx(bB..R:sub(3,4)),bx(bB..R:sub(5,6))end
-S=bv
-T=1
-U=2
+function M(R)R=R:gsub("#","")return cb(cf..R:sub(1,2)),cb(cf..R:sub(3,4)),cb(cf..R:sub(5,6))end
+S=bZ
+T=.2
+U=.2
 V=0
-function onTick()b.o:p()W=bl(1)X=bl(2)Y=bl(3)Z=bl(4)bb=bl(5)bc=bl(6)V=V+1
-if V<5 then
-bd={b.o:y(W-13,2,10,10,bz),b.o:y(1,1,10,X-1,bz)}end
+W=0
+X=1
+Y=30
+Z=0
+bb=bQ
+bc=bR
+pi=bS
+bd={b.o:y(0,2,10,10,ce),b.o:y(0,0,10,0,ce)}be=0
+bf=0
+function onTick()b.o:p()bg=bK(1)bh=bK(2)bi=bK(3)bj=bK(4)bk=bK(5)bl=bK(6)bm=bK(7)be=be+1
+if be==5 then
+bn=bk
+bo=bl
+end
+bd[1].e=bg-13
+bd[2].A=bh-1
 if P(bd[1],1)then
+Z=be
 S=not S
 end
 if N(bd[2],2)then
-if be(Y,Z,1,1,9,X-3)then
-U=Z
-T=Z/X*100
-bt.setNumber(5,T)end
+if bp(bi,bj,0,0,9,bh-1)then
+X=bj
+U=T
+W=bj/bh*20
+V=be
+end
 end
 if S then
-bf=bb
-bg=bc
+bn=bq(bk,bn,bT(1,(be-Z)/Y))bo=bq(bl,bo,bT(1,(be-Z)/Y))end
+T=bq(W,U,bT(1,(be-V)/Y))end
+function bp(br,bs,g,h,bt,bu)return(br>g)and(bs>h)and(br<g+bt)and(bs<h+bu)end
+function onDraw()bh=bW.getHeight()bg=bW.getWidth()bW.drawMap(bn,bo,T)bL(63,63,63,165)bM(0,0,9,bh)bL(63,63,63,200)bU(9,0,9,bh)bL(cc,0,0)bv,bw=map.mapToScreen(bn,bo,T,bg,bh,bk,bl)bw=bh-bw
+bx(bv,bw,bm,11,6,bh)bL(0,0,0)bU(1,X,8,X)F(bd[1],bd[1].B,cg,cd,cd,cg)end
+function bq(by,bz,n)return bz+(by-bz)*n
 end
-end
-function be(bh,bi,g,h,bj,bk)return(bh>g)and(bi>h)and(bh<g+bj)and(bi<h+bk)end
-function onDraw()X=bs.getHeight()W=bs.getWidth()bs.drawMap(bf,bg,T)bm(255,255,0)bp(0,0,W-1,X-1)br(10,0,10,X-1)bm(63,63,63)bn(1,1,9,X-2)bm(0,0,0)br(2,U,9,U)F(bd[1],bd[1].B,by,bA,bA,by)end
+function bx(e,f,by,bA,bB,bh)bC=by*2*bS
+bD=bC+bS/2
+bE=bC-bS/6
+bF=bC-bS*5/6
+bG={e,f}bH={e+bR(bD)*bA,f+bQ(bD)*bA}bI={e+bR(bE)*bB,f+bQ(bE)*bB}bJ={e+bR(bF)*bB,f+bQ(bF)*bB}bL(cc,0,0)bV(bG[1],bh-bG[2],bH[1],bh-bH[2],bJ[1],bh-bJ[2])bL(cc,0,0)bV(bG[1],bh-bG[2],bH[1],bh-bH[2],bI[1],bh-bI[2])end
